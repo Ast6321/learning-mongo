@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 const mongoose = require("mongoose");
-const user = require("./models/usermodel")
+const user = require("./models/usermodel");
+
 
 mongoose.connect("mongodb://127.0.0.1:27017/user")
 .then(()=> console.log("database connected"))
@@ -95,7 +96,7 @@ app.patch("/users/:id",async(req,res)=>{
     try{
         const id = Number(req.params.id);
         const data = req.body;
-        const updateuser = await user.findOneAndUpdate({trainee_id:id},data,{returnDocument:"after"});
+        const updateuser = await user.findOneAndUpdate({trainee_id:id},{ $set: data },{returnDocument:"after"});
         if(!updateuser){
             res.status(404).json("user not found");
         }

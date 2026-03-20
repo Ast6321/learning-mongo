@@ -19,3 +19,15 @@ tommarow will carry on to the post api
 
  
 </pre>
+
+<pre>
+today -- 20/03/2026
+
+today proceed to remaining crud operations 
+learn the architecture and structure of post and put and patch and delete api 
+test the api 
+everything is working 
+but still it is just like introduction.
+learning is going on.
+
+</pre>
